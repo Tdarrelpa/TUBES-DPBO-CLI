@@ -11,7 +11,7 @@ import java.io.*;
  * @author Akfarizi
  */
 
-public class JadwalPelajar extends Jadwal {
+ public class JadwalPelajar extends Jadwal implements IfaceJadwal {
     private int idPelajar;
     private String namaPelajar;
     private List<String> schedule;
@@ -38,38 +38,46 @@ public class JadwalPelajar extends Jadwal {
         return "ID Pelajar: " + idPelajar + ", Nama: " + namaPelajar;
     }
     
+    @Override
     public void cekKetersediaan() {
-        try 
-        {
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            // Format: nama, lahir, alamat, golongan darah, jenis kelamin, umur, sekolah, course, tutor
-            UserPelajar up = new UserPelajar(br.readLine(), br.readLine(), br.read(), br.readLine(), br.readLine(), br.read(), br.readLine(), br.readLine(), br.readLine());
+        
+            Scanner pelajarS = new Scanner(System.in); 
+            
+            System.out.print("Masukan nama: ");
+            String namaPelajar = pelajarS.nextLine();
+            System.out.print("Masukan tanggal lahir spasi dengan (-): ");
+            String dataLahirPelajar = pelajarS.nextLine();
+            System.out.print("Tempat tinggal: ");
+            String alamatPelajar = pelajarS.nextLine();
+            System.out.print("Golongan darah: ");
+            String golonganDarahPelajar = pelajarS.nextLine(); 
+            System.out.print("Umur: ");
+            int umurPelajar = pelajarS.nextInt();
+            Scanner pelajarSS = new Scanner(System.in); 
+            System.out.print("Masukan Sekolah: ");
+            String sekolah = pelajarSS.nextLine();
+            System.out.print("Masukan pelajaran: ");
+            String course = pelajarSS.nextLine();
+            System.out.print("Masukan tutor: ");
+            String Tutor = pelajarSS.nextLine();
+            UserPelajar up = new UserPelajar(namaPelajar, dataLahirPelajar, alamatPelajar, golonganDarahPelajar, "",umurPelajar, sekolah, course, Tutor);
             System.out.println("Memeriksa ketersediaan pelajar...");
-            up.memilihTutor(br.readLine());
+            System.out.print("Pilih tutor: ");
+            up.memilihTutor(pelajarSS.nextLine());
             if(schedule.isEmpty())
             {
                 up.menghubungiViaChat();
-                up.melakukanPembayaran(20000, "Student name","Tutor name");
+                up.melakukanPembayaran(20000, namaPelajar,Tutor);
                 konfirmasiPesanan();
             }
             else
             {
                 System.out.println("Tutor tidak tersedia");
             }
-        } 
-        catch (IOException e) 
-        {
-            System.err.println(e.fillInStackTrace());
-            System.err.println(Arrays.toString(e.getStackTrace()));
-            System.err.println(e.getCause());
-            System.err.println(e.getMessage());
-        }
-        finally
-        {
-            konfirmasiPesanan();
-        }
+        
     }
 
+    @Override
     public void konfirmasiPesanan() 
     {
         try 
@@ -87,4 +95,3 @@ public class JadwalPelajar extends Jadwal {
         }
     }
 }
-

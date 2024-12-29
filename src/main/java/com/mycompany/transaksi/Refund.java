@@ -46,9 +46,9 @@ public class Refund extends Transaksi{
         } 
         catch (Exception e) 
         {
-            System.err.println(e.fillInStackTrace());
-            System.err.println(Arrays.toString(e.getStackTrace()));
-            System.err.println(e.getCause());
+            //System.err.println(e.fillInStackTrace());
+            //System.err.println(Arrays.toString(e.getStackTrace()));
+            //System.err.println(e.getCause());
             System.err.println("Error terjadi: " + e.getMessage());
         }
     }

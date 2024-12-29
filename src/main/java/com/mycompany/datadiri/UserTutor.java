@@ -18,7 +18,7 @@ public class UserTutor extends Datadiri
     private String kemampuan;
     private List<String> schedule;
 
-    public UserTutor(String nama, String dataLahir, int alamat, String golonganDarah, String jenisKelamin, int umur, String tempatBekerja, String pengalaman, String kemampuan) {
+    public UserTutor(String nama, String dataLahir, String alamat, String golonganDarah, String jenisKelamin, int umur, String tempatBekerja, String pengalaman, String kemampuan) {
         super(nama, dataLahir, alamat, golonganDarah, jenisKelamin, umur);
         this.tempatBekerja = tempatBekerja;
         this.pengalaman = pengalaman;
@@ -41,7 +41,8 @@ public class UserTutor extends Datadiri
     public void menerimaPesanan(String pesan) 
     { 
         // Logic to receive order 
-        System.out.println("Order received: " + pesan); 
+        System.out.println("Order received: " + pesan);
+        melakukanPenjadwalan();
     } 
     
     public void menolakPesanan(String pesan) 
@@ -85,14 +86,14 @@ public class UserTutor extends Datadiri
             int durationMinutes = Integer.parseInt(reader.readLine()); 
             LocalTime startTime = LocalTime.now(); 
             LocalTime endTime = startTime.plusMinutes(durationMinutes); 
-        System.out.println("Tutoring session started at " + startTime + " and will end at " + endTime); 
+        System.out.println("Tutoring session started at " + formatTime(startTime) + " and will end at " + formatTime(endTime)); 
             while(LocalTime.now().isBefore(endTime)) 
             { 
                 // Simulate tutoring session 
-                Thread.sleep(1000); 
+                Thread.sleep(Duration.ofMinutes(durationMinutes)); 
             }
             // Sleep for 1 second to simulate time passing 
-                System.out.println("Tutoring session ended at " + LocalTime.now()); 
+                System.out.println("Tutoring session ended at " + formatTime(LocalTime.now())); 
         }
         catch (IOException | InterruptedException e) 
         { 
@@ -114,9 +115,9 @@ public class UserTutor extends Datadiri
         } 
         catch (Exception e) 
         {
-            System.err.println(e.fillInStackTrace());
-            System.err.println(Arrays.toString(e.getStackTrace()));
-            System.err.println(e.getCause());
+            //System.err.println(e.fillInStackTrace());
+            //System.err.println(Arrays.toString(e.getStackTrace()));
+            //System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
     }
@@ -134,9 +135,9 @@ public class UserTutor extends Datadiri
         } 
         catch (Exception e) 
         {
-            System.err.println(e.fillInStackTrace());
-            System.err.println(Arrays.toString(e.getStackTrace()));
-            System.err.println(e.getCause());
+            //System.err.println(e.fillInStackTrace());
+            //System.err.println(Arrays.toString(e.getStackTrace()));
+            //System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
         
@@ -155,15 +156,16 @@ public class UserTutor extends Datadiri
         } 
         catch (Exception e) 
         {
-            System.err.println(e.fillInStackTrace());
-            System.err.println(Arrays.toString(e.getStackTrace()));
-            System.err.println(e.getCause());
+            //System.err.println(e.fillInStackTrace());
+            //System.err.println(Arrays.toString(e.getStackTrace()));
+            //System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
     }
     
     
-    public void mengisiBioData(String nama, String dataLahir, int alamat, String golonganDarah, String jenisKelamin, int umur, String tempatBekerja, String pengalaman, String kemampuan) 
+    @Override
+    public void mengisiBioData(String nama, String dataLahir, String alamat, String golonganDarah, String jenisKelamin, int umur, String tempatBekerja, String pengalaman, String kemampuan) 
     { 
         try 
         {
@@ -183,5 +185,10 @@ public class UserTutor extends Datadiri
         }
         System.out.println("BioData Filled");
     }
+    
+    //Method tambahan supaya kodenya bekerja secara real-time (Mencegah pembacaan waktu secara milidetik, karena menciptakan loop tak hingga)
+    private String formatTime(LocalTime time) 
+    {
+        return String.format("%02d:%02d:%02d", time.getHour(), time.getMinute(), time.getSecond());
+    }
 }
-

@@ -14,7 +14,7 @@ public class UserPelajar extends Datadiri{
     private String course;
     private String tutor;
 
-    public UserPelajar(String nama, String dataLahir, int alamat, String golonganDarah, String jenisKelamin, int umur, String sekolah, String course, String tutor) {
+    public UserPelajar(String nama, String dataLahir, String alamat, String golonganDarah, String jenisKelamin, int umur, String sekolah, String course, String tutor) {
         super(nama, dataLahir, alamat, golonganDarah, jenisKelamin, umur);
         this.sekolah = sekolah;
         this.course = course;
@@ -48,9 +48,33 @@ public class UserPelajar extends Datadiri{
         System.out.println("Chatting with tutor");
     }
     
-    
-    public void mengisiBioData(String nama, String dataLahir, int alamat, String golonganDarah, String jenisKelamin, int umur, String sekolah, String course, String tutor) 
+
+
+    public void melakukanPembayaran(int uang, String pelajar, String tutor) 
     {
+        try 
+        {
+            Pembayaran pr = new Pembayaran(uang, "belum", pelajar, tutor, "Bukti");
+            pr.melakukanPembayaran();
+            if(pr.prosesTransaksi() == true && pr.lihatStatus().equals("Sukses"))
+            {
+                pr.pembayaranDiterima();
+                pr.memesanDosen();
+                pr.mendapatBuktiBayar();
+            }
+        } 
+        catch (Exception e) 
+        {
+            //System.err.println(e.fillInStackTrace());
+            //System.err.println(Arrays.toString(e.getStackTrace()));
+            //System.err.println(e.getCause());
+            System.err.println(e.getMessage());
+        }
+    }
+
+
+    @Override
+    public void mengisiBioData(String nama, String dataLahir, String alamat, String golonganDarah, String jenisKelamin, int umur, String sekolah, String course, String tutor) {
         try 
         {
            setNama(nama);
@@ -65,37 +89,11 @@ public class UserPelajar extends Datadiri{
         } 
         catch (Exception e) 
         {
-            System.err.println(e.fillInStackTrace());
-            System.err.println(Arrays.toString(e.getStackTrace()));
-            System.err.println(e.getCause());
+            //System.err.println(e.fillInStackTrace());
+            //System.err.println(Arrays.toString(e.getStackTrace()));
+            //System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
         System.out.println("Biodata filled");
-    }
-
-    public void melakukanPembayaran(int uang, String pelajar, String tutor) 
-    {
-        try 
-        {
-            Pembayaran pr = new Pembayaran(uang, "belum", pelajar, tutor, "Bukti");
-            pr.melakukanPembayaran();
-            if(pr.prosesTransaksi() == true && pr.lihatStatus().equals("Sukses"))
-            {
-                pr.pembayaranDiterima();
-                pr.memesanDosen();
-                pr.mendapatBuktiBayar();
-            }
-            else
-            {
-                pr.pembayaranDitolak();
-            }
-        } 
-        catch (Exception e) 
-        {
-            System.err.println(e.fillInStackTrace());
-            System.err.println(Arrays.toString(e.getStackTrace()));
-            System.err.println(e.getCause());
-            System.err.println(e.getMessage());
-        }
     }
 }

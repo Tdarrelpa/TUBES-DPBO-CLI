@@ -10,7 +10,7 @@ import java.util.*;
  * @author Akfarizi
  */
 
-public class JadwalTutor extends Jadwal {
+ public class JadwalTutor extends Jadwal implements IfaceJadwal {
     private int idTutor;
     private String namaTutor;
     private float rating;
@@ -45,31 +45,48 @@ public class JadwalTutor extends Jadwal {
         schedule.add(5, "Kamis");
         schedule.add(1, "Sabtu");
     }
-
+    
+    @Override
     public void cekKetersediaan() {
         try 
         {
             Scanner scan = new Scanner(System.in);
             // Format: nama, lahir, alamat, golongan darah, jenis kelamin, umur, tempat kerja, pengalaman, kemampuan
-            UserTutor ut = new UserTutor(scan.nextLine(), scan.nextLine(), scan.nextInt(), scan.nextLine(), scan.nextLine(), scan.nextInt(), scan.nextLine(), scan.nextLine(), scan.nextLine());
+            System.out.print("Masukan nama: ");
+            String NamaTutor = scan.nextLine();
+            System.out.print("Masukan tanggal lahir spasi dengan (-): ");
+            String dataLahirTutor = scan.nextLine();
+            System.out.print("Tempat tinggal: ");
+            String alamatTutor = scan.nextLine();
+            System.out.print("Golongan darah: ");
+            String golonganDarahTutor = scan.nextLine();
+            System.out.print("Umur: ");
+            int umurTutor = scan.nextInt();
+            System.out.print("Tempat berkerja saat ini: ");
+            String tempatBekerja = scan.nextLine(); 
+            System.out.print("Pengalaman: ");
+            String pengalaman = scan.nextLine();
+            System.out.print("Kemampuan: ");
+            String kemampuan = scan.nextLine();
+            UserTutor ut = new UserTutor(NamaTutor, dataLahirTutor, alamatTutor, golonganDarahTutor, scan.nextLine(), umurTutor, tempatBekerja, pengalaman, kemampuan);
             System.out.println("Memeriksa ketersediaan tutor...");
             if(schedule.isEmpty())
             {
-                ut.menerimaPesanan(namaTutor);
+                ut.menerimaPesanan(NamaTutor);
                 konfirmasiPesanan();
                 ut.melakukanPenjadwalan();
                 ut.menjalankanTutoring();
             }
             else
             {
-                ut.menolakPesanan(namaTutor);
+                ut.menolakPesanan(NamaTutor);
             }
         } 
         catch (InputMismatchException e) 
         {
-            System.err.println(e.fillInStackTrace());
-            System.err.println(Arrays.toString(e.getStackTrace()));
-            System.err.println(e.getCause());
+            //System.err.println(e.fillInStackTrace());
+            //System.err.println(Arrays.toString(e.getStackTrace()));
+            //System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
         finally
@@ -78,6 +95,7 @@ public class JadwalTutor extends Jadwal {
         }
     }
 
+    @Override
     public void konfirmasiPesanan() {
         try 
         {

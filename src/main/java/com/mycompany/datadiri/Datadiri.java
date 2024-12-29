@@ -9,16 +9,16 @@ import java.util.Arrays;
  *
  * @author hp
  */
-public class Datadiri 
+public abstract class Datadiri 
 {
     private String nama;
     private String dataLahir;
-    private int alamat;
+    private String alamat;
     private String golonganDarah;
     private String jenisKelamin;
     private int umur;
 
-    public Datadiri(String nama, String dataLahir, int alamat, String golonganDarah, String jenisKelamin, int umur) {
+    public Datadiri(String nama, String dataLahir, String alamat, String golonganDarah, String jenisKelamin, int umur) {
         this.nama = nama;
         this.dataLahir = dataLahir;
         this.alamat = alamat;
@@ -43,11 +43,11 @@ public class Datadiri
         this.dataLahir = dataLahir;
     }
 
-    public int getAlamat() {
+    public String getAlamat() {
         return alamat;
     }
 
-    public void setAlamat(int alamat) {
+    public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
 
@@ -75,32 +75,5 @@ public class Datadiri
         this.umur = umur;
     }
     
-    public void mengisiBioData() 
-    { 
-        try 
-        {
-           BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-           nama = br.readLine();
-           setNama(nama);
-           dataLahir = br.readLine();
-           setDataLahir(dataLahir);
-           alamat = br.read();
-           setAlamat(alamat);
-           golonganDarah = br.readLine();
-           setGolonganDarah(golonganDarah);
-           jenisKelamin = br.readLine();
-           setJenisKelamin(jenisKelamin);
-           umur = br.read();
-           setUmur(umur);
-        } 
-        catch (IOException e) 
-        {
-            System.err.println(e.fillInStackTrace());
-            System.err.println(Arrays.toString(e.getStackTrace()));
-            System.err.println(e.getCause());
-            System.err.println(e.getMessage());
-        }
-        System.out.println("Biodata filled");
-    }
+    public abstract void mengisiBioData(String nama, String dataLahir, String alamat, String golonganDarah, String jenisKelamin, int umur, String sekolah, String course, String tutor);
 }
-

@@ -9,7 +9,7 @@ package com.mycompany.classjadwal;
  * @author Akfarizi
  */
 
-public class Jadwal {
+ public class Jadwal {
     private int tanggal;
     private String bulan;
     private int tahun;
