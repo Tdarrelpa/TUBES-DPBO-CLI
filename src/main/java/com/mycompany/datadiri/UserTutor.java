@@ -67,6 +67,7 @@ public class UserTutor extends Datadiri
             } 
             catch (IOException e) 
             { 
+                System.err.println(e.getCause());
                 System.err.println("An error occurred while reading input: " + e.getMessage());
             } 
         } 
@@ -117,7 +118,7 @@ public class UserTutor extends Datadiri
         {
             //System.err.println(e.fillInStackTrace());
             //System.err.println(Arrays.toString(e.getStackTrace()));
-            //System.err.println(e.getCause());
+            System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
     }
@@ -137,7 +138,7 @@ public class UserTutor extends Datadiri
         {
             //System.err.println(e.fillInStackTrace());
             //System.err.println(Arrays.toString(e.getStackTrace()));
-            //System.err.println(e.getCause());
+            System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
         
@@ -158,7 +159,7 @@ public class UserTutor extends Datadiri
         {
             //System.err.println(e.fillInStackTrace());
             //System.err.println(Arrays.toString(e.getStackTrace()));
-            //System.err.println(e.getCause());
+            System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
     }
@@ -181,6 +182,7 @@ public class UserTutor extends Datadiri
         } 
         catch (Exception e) 
         {
+            System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
         System.out.println("BioData Filled");

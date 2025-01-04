@@ -3,8 +3,6 @@
  */
 
 package com.mycompany.datadiri;
-import java.io.*;
-import java.util.Arrays;
 /**
  *
  * @author hp

@@ -275,11 +275,76 @@ public class ProjectMain {
                     refund.membuatSuratPengajuanRefund();
                     refund.dapatUangKembali();
                     break;
+                case 8:
+                    try 
+                    {
+                        Aktivitas diskusi = new Diskusi("Kapan aja", 60, "diam", "Forum B", 120);
+                        ((Diskusi)diskusi).MulaiDiskusi();
+                        System.out.println(diskusi.cekStatus());
+                        System.out.println(diskusi.getDurasi());
+                        ((Diskusi)diskusi).TutupDiskusi();
+                        ((Diskusi)diskusi).MenjawabPertanyaan();
+                    } 
+                    catch (Exception e) 
+                    {
+                        System.err.println(e.getCause());
+                        System.err.println(e.getMessage());
+                    }
+                    break;
+                case 9:
+                    try 
+                    {
+                        Aktivitas konsul = new Konsultasi("11-04-2025", 100, "diam", "TutorA", "Ruangan B");
+                        konsul.setAktivitas("Mulai");
+                        System.out.println(konsul.getJadwal());
+                        ((Konsultasi)konsul).MenentukanTutor();
+                        ((Konsultasi)konsul).MelakukanPenjadwalan();
+                        System.out.println(konsul.getDurasi());
+                        ((Konsultasi)konsul).MenentukanTopik();
+                        ((Konsultasi)konsul).MengaturTempat();
+                        konsul.setAktivitas("Selesai");
+                        System.out.println(konsul.cekStatus());
+                    } 
+                    catch (Exception e) 
+                    {
+                        System.err.println(e.getCause());
+                        System.err.println(e.getMessage());
+                    }
+                    break;
+                case 10:
+                    try 
+                    {
+                        Scanner sc = new Scanner(System.in);
+                        Aktivitas sesiTutoring = new SesiTutoring("01-04-2025", 180, "diam", "Murid1", "Tutor1", "Tugas1", "Math", "Notes");
+                        sesiTutoring.setAktivitas("Mulai");
+                        System.out.println(sesiTutoring.getJadwal());
+                        ((SesiTutoring)sesiTutoring).setNamaCourse("Biologi");
+                        System.out.println(((SesiTutoring)sesiTutoring).getNamaCourse());
+                        ((SesiTutoring)sesiTutoring).setIDMurid("Budi");
+                        System.out.println(((SesiTutoring)sesiTutoring).getIDMurid());
+                        ((SesiTutoring)sesiTutoring).setIDTutor("Anto");
+                        System.out.println(((SesiTutoring)sesiTutoring).getIDTutor());
+                        ((SesiTutoring)sesiTutoring).setTugas(sc.nextLine());
+                        System.out.println(((SesiTutoring)sesiTutoring).getTugas());
+                        ((SesiTutoring)sesiTutoring).selesaikanTugas();
+                        System.out.println(sesiTutoring.getDurasi());
+                        ((SesiTutoring)sesiTutoring).postTugas();
+                        ((SesiTutoring)sesiTutoring).tambahCatatanPembelajaran();
+                        ((SesiTutoring)sesiTutoring).postCatatanPembelajaran();
+                        sesiTutoring.setAktivitas("Selesai");
+                        System.out.println(sesiTutoring.cekStatus());
+                    } 
+                    catch (Exception e) 
+                    {
+                        System.err.println(e.getCause());
+                        System.err.println(e.getMessage());
+                    }
+                    break;
                 case 0:
                     System.out.println("Terimakasih telah menggunakan aplikasi ini!");
                     break;
                 default:
-                    System.out.println("[Error] Salah memasukkan ");
+                    System.out.println("[Error] Salah memasukkan angka, masukkan angka yang valid");
                     break;
             }
         } while(input != 0);
@@ -296,6 +361,9 @@ public class ProjectMain {
         System.out.println("5. materi");
         System.out.println("6. Transaksi");
         System.out.println("7. Refund");
+        System.out.println("8. Diskusi");
+        System.out.println("9. Konsultasi");
+        System.out.println("10. Tutoring");
         System.out.println("0. Keluar");
         System.out.print("Masukkan input >>");
     }

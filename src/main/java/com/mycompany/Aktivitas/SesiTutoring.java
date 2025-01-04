@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.Aktivitas;
-
+import java.io.*;
 /**
  *
  * @author timot
@@ -81,10 +81,12 @@ public class SesiTutoring extends Aktivitas
     {
         try
         {
-            System.out.println("Post Tugas");
+            System.out.printf("Post Tugas: ", getTugas());
+            System.out.println("Tugas telah diposting");
         } 
         catch (Exception e) 
         {
+            System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
     }
@@ -93,22 +95,28 @@ public class SesiTutoring extends Aktivitas
     {
         try 
         {
-            System.out.println("Post Catatan Pembelajaran");
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            setCatatanPembelajaran(br.readLine());
+            System.out.printf("Post Catatan Pembelajaran: ", getCatatanPembelajaran());
+            System.out.println("Catatan telah dipost");
         } 
-        catch (Exception e) 
+        catch (IOException e) 
         {
+            System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
     }
 
     public void selesaikanTugas()
     {
-        try 
+        try
         {
-            System.out.println("Selesaikan Tugas");
+            System.out.printf("Menyelesaikan tugas: ", getTugas());
+            System.out.println("Tugas telah diselesaikan");
         } 
         catch (Exception e) 
         {
+            System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
     }
@@ -117,10 +125,14 @@ public class SesiTutoring extends Aktivitas
     {
         try 
         {
-            System.out.println("Tambah Catatan Pembelajaran");
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            setCatatanPembelajaran(br.readLine());
+            System.out.printf("Tambah Catatan Pembelajaran: ", getCatatanPembelajaran());
+            System.out.println("Catatan telah ditambah");
         } 
-        catch (Exception e) 
+        catch (IOException e) 
         {
+            System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
     }

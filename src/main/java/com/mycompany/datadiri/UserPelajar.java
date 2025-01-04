@@ -4,7 +4,7 @@
  */
 package com.mycompany.datadiri;
 import com.mycompany.transaksi.*;
-import java.util.Arrays;
+//import java.util.Arrays;
 /**
  *
  * @author hp
@@ -37,8 +37,6 @@ public class UserPelajar extends Datadiri{
         this.tutor = tutor;
     }
     
-    
-
     public void memilihTutor(String tutor) {
         this.tutor = tutor;
         System.out.println("Tutor chosen: " + tutor);
@@ -48,8 +46,6 @@ public class UserPelajar extends Datadiri{
         System.out.println("Chatting with tutor");
     }
     
-
-
     public void melakukanPembayaran(int uang, String pelajar, String tutor) 
     {
         try 
@@ -67,11 +63,10 @@ public class UserPelajar extends Datadiri{
         {
             //System.err.println(e.fillInStackTrace());
             //System.err.println(Arrays.toString(e.getStackTrace()));
-            //System.err.println(e.getCause());
+            System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
     }
-
 
     @Override
     public void mengisiBioData(String nama, String dataLahir, String alamat, String golonganDarah, String jenisKelamin, int umur, String sekolah, String course, String tutor) {
@@ -91,7 +86,7 @@ public class UserPelajar extends Datadiri{
         {
             //System.err.println(e.fillInStackTrace());
             //System.err.println(Arrays.toString(e.getStackTrace()));
-            //System.err.println(e.getCause());
+            System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
         System.out.println("Biodata filled");

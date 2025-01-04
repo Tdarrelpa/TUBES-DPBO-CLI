@@ -5,7 +5,6 @@
 package com.mycompany.classjadwal;
 import com.mycompany.datadiri.*;
 import java.util.*;
-import java.io.*;
 /**
  *
  * @author Akfarizi
