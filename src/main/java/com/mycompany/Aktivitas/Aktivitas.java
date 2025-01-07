@@ -44,7 +44,7 @@ public class Aktivitas
         return status.equals("Mulai");
     }
     
-    protected void setAktivitas(String action) 
+    public void setAktivitas(String action) 
     {
         // Jaga-jaga method MulaiDiskusi() dipanggil lebih dari sekali
         if ("Mulai".equals(action) && status.equals("diam")) 

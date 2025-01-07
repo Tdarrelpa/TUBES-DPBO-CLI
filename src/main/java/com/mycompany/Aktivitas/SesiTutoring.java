@@ -86,7 +86,7 @@ public class SesiTutoring extends Aktivitas
         } 
         catch (Exception e) 
         {
-            System.err.println(e.getCause());
+            //System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
     }
@@ -95,14 +95,12 @@ public class SesiTutoring extends Aktivitas
     {
         try 
         {
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            setCatatanPembelajaran(br.readLine());
             System.out.printf("Post Catatan Pembelajaran: %s\n", getCatatanPembelajaran());
             System.out.println("Catatan telah dipost");
         } 
-        catch (IOException e) 
+        catch (Exception e) 
         {
-            System.err.println(e.getCause());
+            //System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
     }
@@ -116,7 +114,7 @@ public class SesiTutoring extends Aktivitas
         } 
         catch (Exception e) 
         {
-            System.err.println(e.getCause());
+            //System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
     }
@@ -132,7 +130,7 @@ public class SesiTutoring extends Aktivitas
         } 
         catch (IOException e) 
         {
-            System.err.println(e.getCause());
+            //System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
     }

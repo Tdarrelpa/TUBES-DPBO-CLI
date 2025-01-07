@@ -14,7 +14,7 @@ import java.util.*;
     private int idTutor;
     private String namaTutor;
     private float rating;
-    private static List<String> schedule;
+    private List<String> schedule;
 
     public JadwalTutor(int tanggal, String bulan, int tahun, String hari, String kelas, String mataPelajaran, int idTutor, String namaTutor, float rating) {
         super(tanggal, bulan, tahun, hari, kelas, mataPelajaran);
@@ -72,7 +72,6 @@ import java.util.*;
             {
                 ut.menerimaPesanan(NamaTutor);
                 konfirmasiPesanan();
-                ut.melakukanPenjadwalan();
                 ut.menjalankanTutoring();
             }
             else

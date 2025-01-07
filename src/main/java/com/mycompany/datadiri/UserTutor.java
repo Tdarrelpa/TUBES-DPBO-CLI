@@ -23,7 +23,7 @@ public class UserTutor extends Datadiri
         this.tempatBekerja = tempatBekerja;
         this.pengalaman = pengalaman;
         this.kemampuan = kemampuan;
-        this.schedule = new ArrayList<>();
+        this.schedule = new ArrayList<String>();
     }
 
     public void setTempatBekerja(String tempatBekerja) {

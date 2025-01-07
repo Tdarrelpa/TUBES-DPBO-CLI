@@ -4,7 +4,6 @@
  */
 package com.mycompany.Aktivitas;
 import com.mycompany.datadiri.UserPelajar;
-import com.mycompany.classjadwal.JadwalPelajar;
 import java.io.*;
 //import java.util.Arrays;
 /**
@@ -35,7 +34,7 @@ public class Diskusi extends Aktivitas
 
     public void MulaiDiskusi()
     {
-            JadwalPelajar.initializeSchedule();
+            //JadwalPelajar.initializeSchedule();
             setAktivitas("Mulai");
             // Hanya dijalankan ketika aktivitas dimulai dan ada pelajarnya
             if(MulaiAktivitas() == true)
@@ -71,7 +70,7 @@ public class Diskusi extends Aktivitas
                     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
                     setJadwal(br.readLine());
                     setDurasi(br.read());
-                    System.out.printf("Diskusi berakhir pada tanggal %s, di ruang %s, dan waktu %d jam, dengan durasi selama %d\n", jadwal, ruang, waktuDiskusi, durasi);
+                    System.out.printf("Diskusi berakhir pada tanggal %s, di ruang %s, dan waktu %d jam, dengan durasi selama %d jam\n", jadwal, ruang, waktuDiskusi, durasi);
                 } 
                 catch (IOException e) 
                 {

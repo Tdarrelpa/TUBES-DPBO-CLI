@@ -28,7 +28,7 @@ public class Login extends User {
         {
             //System.err.println(e.fillInStackTrace()); // Mencetak stack exception
             //System.err.println(Arrays.toString(e.getStackTrace())); // Mencetaknya sebagai string (dari array)
-            System.err.println(e.getCause()); // Penyebab exception
+            //System.err.println(e.getCause()); // Penyebab exception
             System.err.println("Error login" + e.getMessage()); // Pesan exception
 
         }

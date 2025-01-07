@@ -22,7 +22,7 @@ import java.util.*;
         this.schedule = new ArrayList<String>();
     }
     
-    public static void initializeSchedule()
+    public void initializeSchedule()
     {
         // Sementara, agak bingung buat yang ini
         schedule.add(4, "Senin");
@@ -41,7 +41,6 @@ import java.util.*;
     public void cekKetersediaan() {
         
             Scanner pelajarS = new Scanner(System.in); 
-            
             System.out.print("Masukan nama: ");
             String namaPelajar = pelajarS.nextLine();
             System.out.print("Masukan tanggal lahir spasi dengan (-): ");
