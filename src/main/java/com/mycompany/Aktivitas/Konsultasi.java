@@ -53,7 +53,7 @@ public class Konsultasi extends Aktivitas
         {
             //System.err.println(e.fillInStackTrace());
             //System.err.println(Arrays.toString(e.getStackTrace()));
-            System.err.println(e.getCause());
+            //System.err.println(e.getCause());
             System.err.println("Error terjadi: " + e.getMessage());
         }
     }
@@ -71,7 +71,7 @@ public class Konsultasi extends Aktivitas
         {
             //System.err.println(e.fillInStackTrace());
             //System.err.println(Arrays.toString(e.getStackTrace()));
-            System.err.println(e.getCause());
+            //System.err.println(e.getCause());
             System.err.println("Error terjadi: " + e.getMessage());
         }
     }
@@ -89,7 +89,7 @@ public class Konsultasi extends Aktivitas
         {
             //System.err.println(e.fillInStackTrace());
             //System.err.println(Arrays.toString(e.getStackTrace()));
-            System.err.println(e.getCause());
+            //System.err.println(e.getCause());
             System.err.println("Error terjadi: " + e.getMessage());
         }
     }
@@ -106,7 +106,7 @@ public class Konsultasi extends Aktivitas
         {
             //System.err.println(e.fillInStackTrace());
             //System.err.println(Arrays.toString(e.getStackTrace()));
-            System.err.println(e.getCause());
+            //System.err.println(e.getCause());
             System.err.println("Error terjadi: " + e.getMessage());
         }
     }

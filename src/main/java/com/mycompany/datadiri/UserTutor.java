@@ -67,7 +67,6 @@ public class UserTutor extends Datadiri
             } 
             catch (IOException e) 
             { 
-                System.err.println(e.getCause());
                 System.err.println("An error occurred while reading input: " + e.getMessage());
             } 
         } 
@@ -84,14 +83,14 @@ public class UserTutor extends Datadiri
         { 
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             System.out.print("Enter duration of the tutoring session in minutes: "); 
-            int durationMinutes = Integer.parseInt(reader.readLine()); 
+            int durationSecond = Integer.parseInt(reader.readLine()); 
             LocalTime startTime = LocalTime.now(); 
-            LocalTime endTime = startTime.plusMinutes(durationMinutes); 
+            LocalTime endTime = startTime.plusSeconds(durationSecond); 
         System.out.println("Tutoring session started at " + formatTime(startTime) + " and will end at " + formatTime(endTime)); 
             while(LocalTime.now().isBefore(endTime)) 
             { 
                 // Simulate tutoring session 
-                Thread.sleep(Duration.ofMinutes(durationMinutes)); 
+                Thread.sleep(Duration.ofSeconds(durationSecond)); 
             }
             // Sleep for 1 second to simulate time passing 
                 System.out.println("Tutoring session ended at " + formatTime(LocalTime.now())); 
@@ -138,7 +137,7 @@ public class UserTutor extends Datadiri
         {
             //System.err.println(e.fillInStackTrace());
             //System.err.println(Arrays.toString(e.getStackTrace()));
-            System.err.println(e.getCause());
+            //System.err.println(e.getCause());
             System.err.println(e.getMessage());
         }
         
@@ -188,7 +187,6 @@ public class UserTutor extends Datadiri
         System.out.println("BioData Filled");
     }
     
-    //Method tambahan supaya kodenya bekerja secara real-time (Mencegah pembacaan waktu secara milidetik, karena menciptakan loop tak hingga)
     private String formatTime(LocalTime time) 
     {
         return String.format("%02d:%02d:%02d", time.getHour(), time.getMinute(), time.getSecond());

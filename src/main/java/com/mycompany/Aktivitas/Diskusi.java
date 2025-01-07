@@ -23,25 +23,34 @@ public class Diskusi extends Aktivitas
         this.waktuDiskusi = waktuDiskusi;
     }
 
+    public void setRuang(String ruang) 
+    {
+        this.ruang = ruang;
+    }
+
+    public void setWaktuDiskusi(int waktuDiskusi) 
+    {
+        this.waktuDiskusi = waktuDiskusi;
+    }
+
     public void MulaiDiskusi()
     {
-        //try 
-        {
-            //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            // Diganti karena ada Error logic saat memasukkan input, kadang keluar 'incompatible types: int/ String cannot be converted into String/int'
-            JadwalPelajar jp = new JadwalPelajar(22, "Oktober", 2005, "Rabu", "A12", "Biologi",12, "Darrel");
-            jp.initializeSchedule();
+            JadwalPelajar.initializeSchedule();
             setAktivitas("Mulai");
             // Hanya dijalankan ketika aktivitas dimulai dan ada pelajarnya
-            if(jp.getPelajarInfo().equals(true))
+            if(MulaiAktivitas() == true)
             {
                 try 
                 {
+                    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+                    setJadwal(br.readLine());
+                    setRuang(br.readLine());
+                    setWaktuDiskusi(br.read());
                     System.out.printf("Diskusi dilaksanakan tanggal %s, ruang %s, dan waktu %d jam\n", jadwal, ruang, waktuDiskusi);
                 } 
-                catch (Exception e) 
+                catch (IOException e) 
                 {
-                    System.err.println(e.getCause());
+                    //System.err.println(e.getCause());
                     System.err.println("Error terjadi: " + e.getMessage());
                 }
             }
@@ -49,36 +58,24 @@ public class Diskusi extends Aktivitas
             {
                 System.out.println("Diskusi tidak dimulai");
             }
-        } 
-        /*
-        catch (IOException e) 
-        {
-            {System.err.println(e.fillInStackTrace());}
-            {System.err.println(Arrays.toString(e.getStackTrace()));}
-            System.err.println(e.getCause());
-            System.err.println(e.getMessage());
-        }
-        */
     }
 
     public void TutupDiskusi()
     {
-        //try 
-        {
-            //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            // Diganti karena ada Error logic saat memasukkan input, kadang keluar 'incompatible types: int/ String cannot be converted into String/int'
-            JadwalPelajar jp = new JadwalPelajar(22, "Oktober", 2005, "Rabu", "A12", "Biologi",12, "Darrel");
             setAktivitas("Selesai");
             // Hanya dijalankan ketika aktivitas dimulai dan ada pelajarnya
-            if(jp.getPelajarInfo().equals(true))
+            if(SelesaiAktivitas() == true)
             {
                 try 
                 {
+                    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+                    setJadwal(br.readLine());
+                    setDurasi(br.read());
                     System.out.printf("Diskusi berakhir pada tanggal %s, di ruang %s, dan waktu %d jam, dengan durasi selama %d\n", jadwal, ruang, waktuDiskusi, durasi);
                 } 
-                catch (Exception e) 
+                catch (IOException e) 
                 {
-                    System.err.println(e.getCause());
+                    //System.err.println(e.getCause());
                     System.err.println("Error terjadi: " + e.getMessage());
                 }
             }
@@ -86,16 +83,6 @@ public class Diskusi extends Aktivitas
             {
                 System.out.println("Diskusi belum selesai");
             }
-        } 
-        /*
-        catch (IOException e) 
-        {
-            {System.err.println(e.fillInStackTrace());}
-            {System.err.println(Arrays.toString(e.getStackTrace()));}
-            System.err.println(e.getCause());
-            System.err.println("Error terjadi: " + e.getMessage());
-        }
-        */
     }
 
     public void MenjawabPertanyaan()
@@ -110,7 +97,7 @@ public class Diskusi extends Aktivitas
         {
             //System.err.println(e.fillInStackTrace());
             //System.err.println(Arrays.toString(e.getStackTrace()));
-            System.err.println(e.getCause());
+            //System.err.println(e.getCause());
             System.err.println("Error terjadi: " + e.getMessage());
         }
     }

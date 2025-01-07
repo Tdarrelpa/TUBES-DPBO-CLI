@@ -285,10 +285,11 @@ public class ProjectMain {
                         ((Diskusi)diskusi).TutupDiskusi();
                         ((Diskusi)diskusi).MenjawabPertanyaan();
                         System.out.println(diskusi.cekStatus());
+                        break;
                     } 
                     catch (Exception e) 
                     {
-                        System.err.println(e.getCause());
+                        //System.err.println(e.getCause());
                         System.err.println(e.getMessage());
                     }
                     break;
@@ -299,16 +300,21 @@ public class ProjectMain {
                         konsul.setAktivitas("Mulai");
                         System.out.println(konsul.getJadwal());
                         System.out.println(konsul.cekStatus());
+                        System.out.printf("Pilih tutor: ");
                         ((Konsultasi)konsul).MenentukanTutor();
+                        System.out.printf("Tentukan jadwal konsultasi: ");
                         ((Konsultasi)konsul).MelakukanPenjadwalan();
+                        System.out.printf("Pilih topik konsultasi: ");
                         ((Konsultasi)konsul).MenentukanTopik();
+                        System.out.printf("Pilih tempat konsultasi: ");
                         ((Konsultasi)konsul).MengaturTempat();
                         konsul.setAktivitas("Selesai");
                         System.out.println(konsul.cekStatus());
+                        break;
                     } 
                     catch (Exception e) 
                     {
-                        System.err.println(e.getCause());
+                        //System.err.println(e.getCause());
                         System.err.println(e.getMessage());
                     }
                     break;
@@ -326,19 +332,23 @@ public class ProjectMain {
                         System.out.println(((SesiTutoring)sesiTutoring).getIDMurid());
                         ((SesiTutoring)sesiTutoring).setIDTutor("Anto");
                         System.out.println(((SesiTutoring)sesiTutoring).getIDTutor());
+                        System.out.printf("Masukkan tugas sesi tutoring: ");
                         ((SesiTutoring)sesiTutoring).setTugas(sc.nextLine());
                         System.out.println(((SesiTutoring)sesiTutoring).getTugas());
                         ((SesiTutoring)sesiTutoring).selesaikanTugas();
                         System.out.println(sesiTutoring.getDurasi());
                         ((SesiTutoring)sesiTutoring).postTugas();
+                        System.out.printf("Buat catatan: ");
                         ((SesiTutoring)sesiTutoring).tambahCatatanPembelajaran();
+                        System.out.printf("Post catatan: ");
                         ((SesiTutoring)sesiTutoring).postCatatanPembelajaran();
                         sesiTutoring.setAktivitas("Selesai");
                         System.out.println(sesiTutoring.cekStatus());
+                        break;
                     } 
                     catch (Exception e) 
                     {
-                        System.err.println(e.getCause());
+                        //System.err.println(e.getCause());
                         System.err.println(e.getMessage());
                     }
                     break;

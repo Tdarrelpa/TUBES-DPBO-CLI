@@ -50,7 +50,6 @@ public class Aktivitas
         if ("Mulai".equals(action) && status.equals("diam")) 
         {
             status = "Mulai";
-            MulaiAktivitas();
         } 
         else
         {
@@ -60,7 +59,6 @@ public class Aktivitas
         // Jaga-jaga method TutupDiskusi() dipanggil lebih dari sekali
         if ("Tutup".equals(action) && status.equals("Mulai")) 
         {
-            SelesaiAktivitas();
             status = "diam";
         }
         else

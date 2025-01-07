@@ -13,18 +13,18 @@ import java.util.*;
  public class JadwalPelajar extends Jadwal implements IfaceJadwal {
     private int idPelajar;
     private String namaPelajar;
-    private List<String> schedule;
+    private static List<String> schedule;
 
     public JadwalPelajar(int tanggal, String bulan, int tahun, String hari, String kelas, String mataPelajaran, int idPelajar, String namaPelajar) {
         super(tanggal, bulan, tahun, hari, kelas, mataPelajaran);
         this.idPelajar = idPelajar;
         this.namaPelajar = namaPelajar;
-        this.schedule = new ArrayList<>();
     }
     
-    public void initializeSchedule()
+    public static void initializeSchedule()
     {
         // Sementara, agak bingung buat yang ini
+        schedule = new ArrayList<>();
         schedule.add(4, "Senin");
         schedule.add(0, "Selasa");
         schedule.add(3, "Rabu");

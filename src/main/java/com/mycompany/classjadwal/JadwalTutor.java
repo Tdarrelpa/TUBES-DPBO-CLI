@@ -14,14 +14,13 @@ import java.util.*;
     private int idTutor;
     private String namaTutor;
     private float rating;
-    private List<String> schedule;
+    private static List<String> schedule;
 
     public JadwalTutor(int tanggal, String bulan, int tahun, String hari, String kelas, String mataPelajaran, int idTutor, String namaTutor, float rating) {
         super(tanggal, bulan, tahun, hari, kelas, mataPelajaran);
         this.idTutor = idTutor;
         this.namaTutor = namaTutor;
         this.rating = rating;
-        this.schedule = new ArrayList<>();
     }
 
     public int getIdTutor() 
@@ -37,9 +36,10 @@ import java.util.*;
         return "ID Tutor: " + idTutor + ", Nama: " + namaTutor + ", Rating: " + rating;
     }
     
-    public void initializeSchedule()
+    public static void initializeSchedule()
     {
         // Sementara, agak bingung yang ini
+        schedule = new ArrayList<>();
         schedule.add(4, "Senin");
         schedule.add(3, "Rabu");
         schedule.add(5, "Kamis");
