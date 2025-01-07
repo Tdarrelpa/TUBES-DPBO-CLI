@@ -73,6 +73,7 @@ import java.util.*;
                 ut.menerimaPesanan(NamaTutor);
                 konfirmasiPesanan();
                 ut.melakukanPenjadwalan();
+                ut.menjalankanTutoring();
             }
             else
             {
