@@ -284,6 +284,7 @@ public class ProjectMain {
                         System.out.println(diskusi.getDurasi());
                         ((Diskusi)diskusi).TutupDiskusi();
                         ((Diskusi)diskusi).MenjawabPertanyaan();
+                        System.out.println(diskusi.cekStatus());
                     } 
                     catch (Exception e) 
                     {
@@ -297,9 +298,9 @@ public class ProjectMain {
                         Aktivitas konsul = new Konsultasi("11-04-2025", 100, "diam", "TutorA", "Ruangan B");
                         konsul.setAktivitas("Mulai");
                         System.out.println(konsul.getJadwal());
+                        System.out.println(konsul.cekStatus());
                         ((Konsultasi)konsul).MenentukanTutor();
                         ((Konsultasi)konsul).MelakukanPenjadwalan();
-                        System.out.println(konsul.getDurasi());
                         ((Konsultasi)konsul).MenentukanTopik();
                         ((Konsultasi)konsul).MengaturTempat();
                         konsul.setAktivitas("Selesai");
@@ -318,6 +319,7 @@ public class ProjectMain {
                         Aktivitas sesiTutoring = new SesiTutoring("01-04-2025", 180, "diam", "Murid1", "Tutor1", "Tugas1", "Math", "Notes");
                         sesiTutoring.setAktivitas("Mulai");
                         System.out.println(sesiTutoring.getJadwal());
+                        System.out.println(sesiTutoring.cekStatus());
                         ((SesiTutoring)sesiTutoring).setNamaCourse("Biologi");
                         System.out.println(((SesiTutoring)sesiTutoring).getNamaCourse());
                         ((SesiTutoring)sesiTutoring).setIDMurid("Budi");

@@ -96,7 +96,6 @@ public class Konsultasi extends Aktivitas
 
     public void MenentukanTopik()
     {
-        System.out.printf("Membahas tentang menghadapi ujian");
         try 
         {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
