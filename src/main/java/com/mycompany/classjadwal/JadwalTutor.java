@@ -21,6 +21,7 @@ import java.util.*;
         this.idTutor = idTutor;
         this.namaTutor = namaTutor;
         this.rating = rating;
+        this.schedule = new ArrayList<String>();
     }
 
     public int getIdTutor() 
@@ -36,10 +37,9 @@ import java.util.*;
         return "ID Tutor: " + idTutor + ", Nama: " + namaTutor + ", Rating: " + rating;
     }
     
-    public static void initializeSchedule()
+    public void initializeSchedule()
     {
         // Sementara, agak bingung yang ini
-        schedule = new ArrayList<>();
         schedule.add(4, "Senin");
         schedule.add(3, "Rabu");
         schedule.add(5, "Kamis");
