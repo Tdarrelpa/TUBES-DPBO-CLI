@@ -18,8 +18,8 @@ public class UserTutor extends Datadiri
     private String kemampuan;
     private List<String> schedule;
 
-    public UserTutor(String nama, String dataLahir, String alamat, String golonganDarah, String jenisKelamin, int umur, String tempatBekerja, String pengalaman, String kemampuan) {
-        super(nama, dataLahir, alamat, golonganDarah, jenisKelamin, umur);
+    public UserTutor(String nama, String dataLahir, String alamat, String jenisKelamin, int umur, String tempatBekerja, String pengalaman, String kemampuan) {
+        super(nama, dataLahir, alamat, jenisKelamin, umur);
         this.tempatBekerja = tempatBekerja;
         this.pengalaman = pengalaman;
         this.kemampuan = kemampuan;
@@ -82,18 +82,19 @@ public class UserTutor extends Datadiri
         try 
         { 
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            System.out.print("Enter duration of the tutoring session in minutes: "); 
+            System.out.print("Enter duration of the tutoring session in seconds: "); 
             int durationSecond = Integer.parseInt(reader.readLine()); 
             LocalTime startTime = LocalTime.now(); 
             LocalTime endTime = startTime.plusSeconds(durationSecond); 
-        System.out.println("Tutoring session started at " + formatTime(startTime) + " and will end at " + formatTime(endTime)); 
+            System.out.println("Tutoring session started at " + formatTime(startTime) + " and will end at " + formatTime(endTime)); 
             while(LocalTime.now().isBefore(endTime)) 
             { 
                 // Simulate tutoring session 
-                Thread.sleep(Duration.ofSeconds(durationSecond)); 
+                Thread.sleep(Duration.ofSeconds(durationSecond));
             }
+            
             // Sleep for 1 second to simulate time passing 
-                System.out.println("Tutoring session ended at " + formatTime(LocalTime.now())); 
+            System.out.println("Tutoring session ended at " + formatTime(LocalTime.now())); 
         }
         catch (IOException | InterruptedException e) 
         { 
@@ -165,14 +166,13 @@ public class UserTutor extends Datadiri
     
     
     @Override
-    public void mengisiBioData(String nama, String dataLahir, String alamat, String golonganDarah, String jenisKelamin, int umur, String tempatBekerja, String pengalaman, String kemampuan) 
+    public void mengisiBioData(String nama, String dataLahir, String alamat, String jenisKelamin, int umur, String sekolah, String course, String tutor) 
     { 
         try 
         {
            setNama(nama);
            setDataLahir(dataLahir);
            setAlamat(alamat);
-           setGolonganDarah(golonganDarah);
            setJenisKelamin(jenisKelamin);
            setUmur(umur);
            setTempatBekerja(tempatBekerja);

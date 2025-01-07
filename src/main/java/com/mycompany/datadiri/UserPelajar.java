@@ -14,8 +14,8 @@ public class UserPelajar extends Datadiri{
     private String course;
     private String tutor;
 
-    public UserPelajar(String nama, String dataLahir, String alamat, String golonganDarah, String jenisKelamin, int umur, String sekolah, String course, String tutor) {
-        super(nama, dataLahir, alamat, golonganDarah, jenisKelamin, umur);
+    public UserPelajar(String nama, String dataLahir, String alamat, String jenisKelamin, int umur, String sekolah, String course, String tutor) {
+        super(nama, dataLahir, alamat, jenisKelamin, umur);
         this.sekolah = sekolah;
         this.course = course;
         this.tutor = tutor;
@@ -68,14 +68,14 @@ public class UserPelajar extends Datadiri{
         }
     }
 
+
     @Override
-    public void mengisiBioData(String nama, String dataLahir, String alamat, String golonganDarah, String jenisKelamin, int umur, String sekolah, String course, String tutor) {
+    public void mengisiBioData(String nama, String dataLahir, String alamat, String jenisKelamin, int umur, String sekolah, String course, String tutor) {
         try 
         {
            setNama(nama);
            setDataLahir(dataLahir);
            setAlamat(alamat);
-           setGolonganDarah(golonganDarah);
            setJenisKelamin(jenisKelamin);
            setUmur(umur);
            setSekolah(sekolah);

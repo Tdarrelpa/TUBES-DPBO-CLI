@@ -58,24 +58,21 @@ import java.util.*;
             String dataLahirTutor = scan.nextLine();
             System.out.print("Tempat tinggal: ");
             String alamatTutor = scan.nextLine();
-            System.out.print("Golongan darah: ");
-            String golonganDarahTutor = scan.nextLine();
             System.out.print("Umur: ");
             int umurTutor = scan.nextInt();
             System.out.print("Tempat berkerja saat ini: ");
-            String tempatBekerja = scan.nextLine(); 
+            String Tempatbekerja = scan.nextLine(); 
             System.out.print("Pengalaman: ");
-            String pengalaman = scan.nextLine();
+            String Pengalaman = scan.nextLine();
             System.out.print("Kemampuan: ");
-            String kemampuan = scan.nextLine();
-            UserTutor ut = new UserTutor(NamaTutor, dataLahirTutor, alamatTutor, golonganDarahTutor, scan.nextLine(), umurTutor, tempatBekerja, pengalaman, kemampuan);
+            String Kemampuan = scan.nextLine();
+            UserTutor ut = new UserTutor(NamaTutor, dataLahirTutor, alamatTutor, scan.nextLine(), umurTutor, Tempatbekerja, Pengalaman, Kemampuan);
             System.out.println("Memeriksa ketersediaan tutor...");
             if(schedule.isEmpty())
             {
                 ut.menerimaPesanan(NamaTutor);
                 konfirmasiPesanan();
                 ut.melakukanPenjadwalan();
-                ut.menjalankanTutoring();
             }
             else
             {

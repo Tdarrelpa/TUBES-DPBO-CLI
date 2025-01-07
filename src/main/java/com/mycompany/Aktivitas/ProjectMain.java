@@ -69,26 +69,24 @@ public class ProjectMain {
                     try
                     {
                         Scanner pelajarS = new Scanner(System.in);   
-                        UserPelajar userPelajar = new UserPelajar("Guest", "xx-xxxx", "NULL", "NULL", "L/P", 0, "Sekolah", "Course", "tutor");
+                        UserPelajar userPelajar = new UserPelajar("Guest", "xx-xxxx", "NULL", "L/P", 0, "Sekolah", "Course", "tutor");
                         System.out.print("Masukan nama: ");
                         String namaPelajar = pelajarS.nextLine();
                         System.out.print("Masukan tanggal lahir spasi dengan (-): ");
                         String dataLahirPelajar = pelajarS.nextLine();
                         System.out.print("Tempat tinggal: ");
                         String alamatPelajar = pelajarS.nextLine();
-                        System.out.print("Golongan darah: ");
-                        String golonganDarahPelajar = pelajarS.nextLine(); 
                         System.out.print("Umur: ");
                         int umurPelajar = pelajarS.nextInt();
                         Scanner pelajarSS = new Scanner(System.in); 
                         System.out.print("Masukan Sekolah: ");
-                        String sekolah = pelajarSS.nextLine();
+                        String Sekolah = pelajarSS.nextLine();
                         System.out.print("Masukan pelajaran: ");
-                        String course = pelajarSS.nextLine();
+                        String Course = pelajarSS.nextLine();
                         System.out.print("Masukan tutor: ");
                         String Tutor = pelajarSS.nextLine();
                     
-                        userPelajar.mengisiBioData(namaPelajar, dataLahirPelajar, alamatPelajar, golonganDarahPelajar, pelajarSS.nextLine(),umurPelajar, sekolah, course, Tutor);
+                        userPelajar.mengisiBioData(namaPelajar, dataLahirPelajar, alamatPelajar, pelajarSS.nextLine(), umurPelajar, Sekolah, Course, Tutor);
                         //System.out.print("Masukan tutor yang dipilih: ");
                         //String tutorPilihan = pelajarSS.nextLine();
                         userPelajar.memilihTutor(Tutor);
@@ -106,7 +104,7 @@ public class ProjectMain {
                 case 2:
                     try
                     {
-                        UserTutor userTutor = new UserTutor("Guest", "xx-xxxx", "NULL", "NULL", "L/P", 0, "TempatKerja", "Pengalaman", "kemampuan");
+                        UserTutor userTutor = new UserTutor("Guest", "xx-xxxx", "NULL", "L/P", 0, "TempatKerja", "Pengalaman", "kemampuan");
                         Scanner sc = new Scanner(System.in);
                         // Untuk menginput biodata yang ada
                         System.out.print("Masukan nama: ");
@@ -115,8 +113,6 @@ public class ProjectMain {
                         String dataLahirTutor = sc.nextLine();
                         System.out.print("Tempat tinggal: ");
                         String alamatTutor = sc.nextLine();
-                        System.out.print("Golongan darah: ");
-                        String golonganDarahTutor = sc.nextLine();
                         System.out.print("Umur: ");
                         int umurTutor = sc.nextInt();
                         System.out.print("Tempat berkerja saat ini: ");
@@ -125,7 +121,7 @@ public class ProjectMain {
                         String pengalaman = sc.nextLine();
                         System.out.print("Kemampuan: ");
                         String kemampuan = sc.nextLine();
-                        userTutor.mengisiBioData(namaTutor, dataLahirTutor, alamatTutor, golonganDarahTutor, sc.nextLine(), umurTutor, tempatBekerja, pengalaman, kemampuan);
+                        userTutor.mengisiBioData(namaTutor, dataLahirTutor, alamatTutor, sc.nextLine(), umurTutor, tempatBekerja, pengalaman, kemampuan);
 
                         System.out.print("Apakah menerima pesanan? (ya/tidak): ");
                         String approval = sc.nextLine();
@@ -336,13 +332,11 @@ public class ProjectMain {
                         ((SesiTutoring)sesiTutoring).setTugas(sc.nextLine());
                         System.out.println(((SesiTutoring)sesiTutoring).getTugas());
                         ((SesiTutoring)sesiTutoring).selesaikanTugas();
-                        System.out.println(sesiTutoring.getDurasi());
-                        ((SesiTutoring)sesiTutoring).postTugas();
                         System.out.printf("Buat catatan: ");
                         ((SesiTutoring)sesiTutoring).tambahCatatanPembelajaran();
-                        System.out.printf("Post catatan: ");
-                        ((SesiTutoring)sesiTutoring).postCatatanPembelajaran();
                         sesiTutoring.setAktivitas("Selesai");
+                        ((SesiTutoring)sesiTutoring).postTugas();
+                        ((SesiTutoring)sesiTutoring).postCatatanPembelajaran();
                         System.out.println(sesiTutoring.cekStatus());
                         break;
                     } 

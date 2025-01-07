@@ -90,7 +90,7 @@ public class Diskusi extends Aktivitas
         try 
         {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            UserPelajar up = new UserPelajar(br.readLine(), br.readLine(), br.readLine(), br.readLine(), br.readLine(), br.read(), br.readLine(), br.readLine(), br.readLine());
+            UserPelajar up = new UserPelajar(br.readLine(), br.readLine(), br.readLine(), br.readLine(), br.read(), br.readLine(), br.readLine(), br.readLine());
             System.out.printf("Selama %d jam, %s bisa menjawab pertanyaan", waktuDiskusi, up.getNama());
         } 
         catch (IOException e) 

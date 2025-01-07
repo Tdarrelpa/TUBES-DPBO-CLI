@@ -12,15 +12,13 @@ public abstract class Datadiri
     private String nama;
     private String dataLahir;
     private String alamat;
-    private String golonganDarah;
     private String jenisKelamin;
     private int umur;
 
-    public Datadiri(String nama, String dataLahir, String alamat, String golonganDarah, String jenisKelamin, int umur) {
+    public Datadiri(String nama, String dataLahir, String alamat, String jenisKelamin, int umur) {
         this.nama = nama;
         this.dataLahir = dataLahir;
         this.alamat = alamat;
-        this.golonganDarah = golonganDarah;
         this.jenisKelamin = jenisKelamin;
         this.umur = umur;
     }
@@ -49,14 +47,6 @@ public abstract class Datadiri
         this.alamat = alamat;
     }
 
-    public String getGolonganDarah() {
-        return golonganDarah;
-    }
-
-    public void setGolonganDarah(String golonganDarah) {
-        this.golonganDarah = golonganDarah;
-    }
-
     public String getJenisKelamin() {
         return jenisKelamin;
     }
@@ -73,5 +63,5 @@ public abstract class Datadiri
         this.umur = umur;
     }
     
-    public abstract void mengisiBioData(String nama, String dataLahir, String alamat, String golonganDarah, String jenisKelamin, int umur, String sekolah, String course, String tutor);
+    public abstract void mengisiBioData(String nama, String dataLahir, String alamat, String jenisKelamin, int umur, String sekolah, String course, String tutor);
 }
