@@ -81,7 +81,7 @@ public class SesiTutoring extends Aktivitas
     {
         try
         {
-            System.out.printf("Post Tugas: ", getTugas());
+            System.out.printf("Post Tugas: %s\n", getTugas());
             System.out.println("Tugas telah diposting");
         } 
         catch (Exception e) 
@@ -97,7 +97,7 @@ public class SesiTutoring extends Aktivitas
         {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             setCatatanPembelajaran(br.readLine());
-            System.out.printf("Post Catatan Pembelajaran: ", getCatatanPembelajaran());
+            System.out.printf("Post Catatan Pembelajaran: %s\n", getCatatanPembelajaran());
             System.out.println("Catatan telah dipost");
         } 
         catch (IOException e) 
@@ -111,7 +111,7 @@ public class SesiTutoring extends Aktivitas
     {
         try
         {
-            System.out.printf("Menyelesaikan tugas: ", getTugas());
+            System.out.printf("Menyelesaikan tugas: %s\n", getTugas());
             System.out.println("Tugas telah diselesaikan");
         } 
         catch (Exception e) 
@@ -127,7 +127,7 @@ public class SesiTutoring extends Aktivitas
         {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             setCatatanPembelajaran(br.readLine());
-            System.out.printf("Tambah Catatan Pembelajaran: ", getCatatanPembelajaran());
+            System.out.printf("Tambah Catatan Pembelajaran: %s\n", getCatatanPembelajaran());
             System.out.println("Catatan telah ditambah");
         } 
         catch (IOException e) 
