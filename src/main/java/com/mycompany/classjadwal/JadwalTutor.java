@@ -60,13 +60,14 @@ import java.util.*;
             String alamatTutor = scan.nextLine();
             System.out.print("Umur: ");
             int umurTutor = scan.nextInt();
+            Scanner scans = new Scanner(System.in);
             System.out.print("Tempat berkerja saat ini: ");
-            String Tempatbekerja = scan.nextLine(); 
+            String Tempatbekerja = scans.nextLine(); 
             System.out.print("Pengalaman: ");
-            String Pengalaman = scan.nextLine();
+            String Pengalaman = scans.nextLine();
             System.out.print("Kemampuan: ");
-            String Kemampuan = scan.nextLine();
-            UserTutor ut = new UserTutor(NamaTutor, dataLahirTutor, alamatTutor, scan.nextLine(), umurTutor, Tempatbekerja, Pengalaman, Kemampuan);
+            String Kemampuan = scans.nextLine();
+            UserTutor ut = new UserTutor(NamaTutor, dataLahirTutor, alamatTutor, scans.nextLine(), umurTutor, Tempatbekerja, Pengalaman, Kemampuan);
             System.out.println("Memeriksa ketersediaan tutor...");
             if(schedule.isEmpty())
             {

@@ -115,16 +115,17 @@ public class ProjectMain {
                         String alamatTutor = sc.nextLine();
                         System.out.print("Umur: ");
                         int umurTutor = sc.nextInt();
+                        Scanner ssc = new Scanner(System.in);
                         System.out.print("Tempat berkerja saat ini: ");
-                        String tempatBekerja = sc.nextLine(); 
+                        String tempatBekerja = ssc.nextLine(); 
                         System.out.print("Pengalaman: ");
-                        String pengalaman = sc.nextLine();
+                        String pengalaman = ssc.nextLine();
                         System.out.print("Kemampuan: ");
-                        String kemampuan = sc.nextLine();
-                        userTutor.mengisiBioData(namaTutor, dataLahirTutor, alamatTutor, sc.nextLine(), umurTutor, tempatBekerja, pengalaman, kemampuan);
+                        String kemampuan = ssc.nextLine();
+                        userTutor.mengisiBioData(namaTutor, dataLahirTutor, alamatTutor, ssc.nextLine(), umurTutor, tempatBekerja, pengalaman, kemampuan);
 
                         System.out.print("Apakah menerima pesanan? (ya/tidak): ");
-                        String approval = sc.nextLine();
+                        String approval = ssc.nextLine();
                         if ("ya".equalsIgnoreCase(approval) && "Ya".equalsIgnoreCase(approval)) {
                             userTutor.menerimaPesanan("Pesan");
                         } 
